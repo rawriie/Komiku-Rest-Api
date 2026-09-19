@@ -95,7 +95,9 @@ async function scrapeKomikDetail(url) {
     ),
   ];
 
-  const komikSlug = extractMangaSlug(url);
+   const komikSlug = $("td a[itemprop='url']").first().attr("href").replace(/^\/|\/$/g, "")
+  .replace(/-chapter-[^/]+$/i, "");
+
   // const firstChapterElement = findLabeledChapterLink($, "Awal:");
   // const latestChapterElement = findLabeledChapterLink($, "Terbaru:");
 
